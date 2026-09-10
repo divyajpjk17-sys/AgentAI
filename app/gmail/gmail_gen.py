@@ -32,8 +32,23 @@ Output Exactly:
 User Command:
 {command}
 """
-
   url={
     f"https://generativelanguage.googleapis.com/"
     f"vlbeta/models/{MODEL}:generativeContent"
+  }
+  payload = {
+    "contents":[{"parts":[{"text":prompt}]}],
+    "generationConfig":{
+      "temperature":0.7,
+      "maxOutputTokens":800
+    }
+  }
+  req = urllib.request.Request{
+    url,
+    data=json.dumps(payload).encode(),
+    headers={
+      "context-Type":"application/json",
+      "x-goog-api-key": API_KEY
+    },
+  method="POST"
   }
