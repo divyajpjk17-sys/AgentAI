@@ -77,7 +77,8 @@ except urllib.error.HTTPError as e:
     except Exception:
       detail = str(e)
     raise RunTimeError(f"Gemini API error:{detail}")\
-  time.sleep((2 **attempt) + random.random())
+  time.sleep((2 ** attempt) + random.random())
 except Exception:
   if attempt == 3:
-    
+    raise
+  time.sleep(1)
