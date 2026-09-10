@@ -23,3 +23,17 @@ Rules:
 - Do not explain everything.
 - Do not invent names,dates,prices,companies,attachments or facts.
 - keep the mail natural and concise.
+
+Output Exactly:
+  Subject:<subject>
+  BODY:
+  <email body>
+
+User Command:
+{command}
+"""
+
+  url={
+    f"https://generativelanguage.googleapis.com/"
+    f"vlbeta/models/{MODEL}:generativeContent"
+  }
