@@ -13,7 +13,7 @@ from app.gmail import (
 from app.youtube import youtube_bp
 def create_app():
 
-    app = Flask(_name_)
+    app = Flask(__name__)
 
     CORS(app)
 
